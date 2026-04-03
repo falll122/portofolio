@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Ilham Thoriqul Falah</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      border: 3px solid #00c6ff;
+      margin-bottom: 15px;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+    }
+
+    .progress {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .progress-bar {
+      height: 20px;
+      width: 0;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      transition: 1.5s;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card p {
+      padding: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://source.unsplash.com/150x150/?portrait" alt="profile">
+  <h1>Ilham Thoriqul Falah</h1>
+  <p>Designer & Programmer</p>
+</header>
+
+<nav>
+  <a href="#about">Tentang</a>
+  <a href="#skills">Keahlian</a>
+  <a href="#portfolio">Portofolio</a>
+  <a href="#contact">Kontak</a>
+</nav>
+
+<section id="about">
+  <h2>Tentang Saya</h2>
+  <p>Saya adalah seorang designer dan programmer yang sedang mengembangkan skill dalam membuat tampilan modern dan fungsional. Saya fokus pada learning project untuk meningkatkan kemampuan saya.</p>
+</section>
+
+<section id="skills">
+  <h2>Keahlian</h2>
+  <p>Design</p>
+  <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+
+  <p>Coding</p>
+  <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio Learning Project</h2>
+  <div class="portfolio">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?programming,code">
+      <p>Website Development (Learning Project)</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?ui,ux,design">
+      <p>UI Design Concept (Learning Project)</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?web,developer">
+      <p>Programming Practice (Learning Project)</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontak</h2>
+  <p>Email: ilhamjepara125@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Ilham Thoriqul Falah</p>
+</footer>
+
+<script>
+const bars = document.querySelectorAll(".progress-bar");
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.85;
+  bars.forEach(bar => {
+    if (bar.getBoundingClientRect().top < trigger) {
+      bar.style.width = bar.dataset.width;
+    }
+  });
+});
+</script>
+
+</body>
+</html>
