@@ -3,102 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio - Ilham Thoriqul Falah</title>
+  <title>Portfolio - Ilham Thoriqul Falah</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
     }
 
     header {
       text-align: center;
-      padding: 80px 20px;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
     }
 
-    header img {
-      width: 120px;
-      border-radius: 50%;
-      border: 3px solid #00c6ff;
-      margin-bottom: 15px;
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    header p {
+      opacity: 0.7;
     }
 
     nav {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       padding: 15px;
+      background: rgba(255,255,255,0.05);
       position: sticky;
       top: 0;
-      background: rgba(0,0,0,0.5);
       backdrop-filter: blur(10px);
     }
 
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: #e2e8f0;
       text-decoration: none;
+      font-weight: bold;
     }
 
     section {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 50px auto;
       padding: 30px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.03);
       border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.7s;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill {
+      margin-bottom: 20px;
     }
 
     .progress {
-      background: rgba(255,255,255,0.2);
+      background: #1e293b;
       border-radius: 20px;
       overflow: hidden;
-      margin-bottom: 15px;
     }
 
     .progress-bar {
       height: 20px;
       width: 0;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
       transition: 1.5s;
     }
 
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 15px;
-    }
-
     .card {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
       border-radius: 10px;
-      overflow: hidden;
+      margin-bottom: 15px;
       transition: 0.3s;
     }
 
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
     }
 
-    .card p {
-      padding: 10px;
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      opacity: 0.7;
+      opacity: 0.5;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://source.unsplash.com/150x150/?portrait" alt="profile">
   <h1>Ilham Thoriqul Falah</h1>
   <p>Designer & Programmer</p>
 </header>
@@ -106,45 +118,56 @@
 <nav>
   <a href="#about">Tentang</a>
   <a href="#skills">Keahlian</a>
-  <a href="#portfolio">Portofolio</a>
+  <a href="#portfolio">Portfolio</a>
   <a href="#contact">Kontak</a>
 </nav>
 
 <section id="about">
   <h2>Tentang Saya</h2>
-  <p>Saya adalah seorang designer dan programmer yang sedang mengembangkan skill dalam membuat tampilan modern dan fungsional. Saya fokus pada learning project untuk meningkatkan kemampuan saya.</p>
+  <p>Saya adalah seorang designer dan programmer yang berfokus pada pembuatan tampilan modern, elegan, dan fungsional. Saya terus belajar dan mengembangkan skill melalui berbagai project latihan.</p>
 </section>
 
 <section id="skills">
   <h2>Keahlian</h2>
-  <p>Design</p>
-  <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
 
-  <p>Coding</p>
-  <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
+  <div class="skill">
+    <p>Design</p>
+    <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Coding</p>
+    <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
+  </div>
+
 </section>
 
 <section id="portfolio">
-  <h2>Portfolio Learning Project</h2>
-  <div class="portfolio">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?programming,code">
-      <p>Website Development (Learning Project)</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?ui,ux,design">
-      <p>UI Design Concept (Learning Project)</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x300/?web,developer">
-      <p>Programming Practice (Learning Project)</p>
-    </div>
+  <h2>Portfolio</h2>
+
+  <div class="card">
+    <h3>Website Development</h3>
+    <p>Project latihan dalam membuat website modern dengan tampilan profesional.</p>
   </div>
+
+  <div class="card">
+    <h3>UI/UX Design</h3>
+    <p>Desain tampilan aplikasi dan website yang fokus pada user experience.</p>
+  </div>
+
+  <div class="card">
+    <h3>Programming Practice</h3>
+    <p>Latihan coding untuk meningkatkan logika dan kemampuan pengembangan aplikasi.</p>
+  </div>
+
 </section>
 
 <section id="contact">
   <h2>Kontak</h2>
   <p>Email: ilhamjepara125@gmail.com</p>
+  <a href="mailto:ilhamjepara125@gmail.com" class="btn">Email Saya</a>
+  <br><br>
+  <a href="https://wa.me/6287785723587" class="btn">Chat WhatsApp</a>
 </section>
 
 <footer>
@@ -152,9 +175,18 @@
 </footer>
 
 <script>
+const sections = document.querySelectorAll("section");
 const bars = document.querySelectorAll(".progress-bar");
+
 window.addEventListener("scroll", () => {
   const trigger = window.innerHeight * 0.85;
+
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < trigger) {
+      sec.classList.add("show");
+    }
+  });
+
   bars.forEach(bar => {
     if (bar.getBoundingClientRect().top < trigger) {
       bar.style.width = bar.dataset.width;
